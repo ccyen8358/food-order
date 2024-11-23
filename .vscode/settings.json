@@ -1,5 +1,17 @@
 {
     "github.copilot.enable": {
         "properties": false
-    }
+    },
+    /*
+        lookup files for CSS Variable Autocomplete extension
+        source: https://mantine.dev/getting-started/#set-up-vs-code
+        extension: https://marketplace.visualstudio.com/items?itemName=vunguyentuan.vscode-css-variables
+    */ 
+    "cssVariables.lookupFiles": [
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "node_modules/@mantine/core/styles.css"
+    ]
 }

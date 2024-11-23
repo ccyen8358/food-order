@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* 
+    enable app router tree shaking for mantine 
+    source: https://mantine.dev/guides/next/#app-router-tree-shaking
+  */
   optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
 };
 
