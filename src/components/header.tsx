@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { IconLogin2, IconChefHat, IconPepper } from "@tabler/icons-react";
-import { Button } from "@mantine/core";
+import LoginWidget from "./login-widget";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -8,21 +8,17 @@ export default function Header() {
       <div>
         <Link href="/" className="font-bold text-lg">
           <div className="flex justify-between items-center">
-            <IconPepper
-              className="text-red-800 mr-0.5 rounded-full p-1"
-              size={36}
+            <Image
+              src="foodord_black.svg"
+              alt="Foodord Icon"
+              width={140}
+              height={50}
             />
-            <div>
-              <span className="">Meal</span> Hub
-            </div>
           </div>
         </Link>
       </div>
-      <div className="flex-1"></div>
-      <div>
-        <Button leftSection={<IconLogin2 size={18} />} variant="filled">
-          Login
-        </Button>
+      <div className="flex gap-2">
+        <LoginWidget />
       </div>
     </div>
   );

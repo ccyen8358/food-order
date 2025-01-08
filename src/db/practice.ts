@@ -1,9 +1,9 @@
 import "dotenv/config";
-// import { db } from "@/db/index";
 import * as schema from "@/db/schema-bundle";
 import { User } from "@/db/schema-bundle";
 import postgres from "postgres";
 import { drizzle } from "drizzle-orm/postgres-js";
+import cuid2 from "@paralleldrive/cuid2";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 if (!SUPABASE_URL) {
@@ -23,10 +23,12 @@ const is_insert = false;
 await (async function () {
   if (is_insert) {
     const user: typeof User.$inferInsert = {
-      username: "admin",
-      display_name: "Admin",
-      password: "114514",
+      id: cuid2.createId(),
+      name: "admin",
       email: "admin@example.com",
+      email_verified: false,
+      created_at: new Date(),
+      updated_at: new Date(),
     };
     await db.insert(User).values(user);
     console.log("New user created!");

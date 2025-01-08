@@ -1,2 +1,1 @@
-export * from "./schema/user-provider";
-export * from "./schema/user";
+export * from "./schema/auth-schema";

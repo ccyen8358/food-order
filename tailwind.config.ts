@@ -12,6 +12,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      container: {
+        // center container by default
+        // https://tailwindcss.com/docs/container#centering-by-default
+        center: true,
+      },
     },
   },
   plugins: [],
